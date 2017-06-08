@@ -44,7 +44,7 @@ class OrdersController < ApplicationController
     cart.each do |product_id, details|
       if product = Product.find_by(id: product_id)
         quantity = details['quantity'].to_i
-        @order = order.line_items.new(
+        order.line_items.new(
           product: product,
           quantity: quantity,
           item_price: product.price,
@@ -52,7 +52,9 @@ class OrdersController < ApplicationController
         )
       end
     end
+    @order = order
     order.save!
+    UserMailer.order_email(@order, current_user).deliver_now
     order
   end
 
