@@ -15,8 +15,8 @@
   <div>
     <% @order_total = 0 %>
     <% @order.line_items.each do |line| %>
-      <p><%= line.quantity%> x <%= line.product%></p><br>
-      <p><%= line.total_price %> at <%= line.item_price %></p><br>
+      <p><%= line.quantity%> x <%= line.product.name%></p><br>
+      <p><%= line.total_price %> at <%= line.item_price %> per unit</p><br>
       <% @order_total += line.total_price %>
     <% end %>
   </div>
