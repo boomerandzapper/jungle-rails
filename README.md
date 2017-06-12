@@ -29,6 +29,7 @@ More information in their docs: <https://stripe.com/docs/testing#cards>
 
 ## Screenshots
 
-![Home Page](https://github.com/boomerandzapper/jungle-rails/blob/master/screenshots/admin_page.png)
 
-![Admin Page](https://github.com/boomerandzapper/jungle-rails/blob/master/screenshots/home_page.png)
+
+![Home Page](https://github.com/boomerandzapper/jungle-rails/blob/master/screenshots/home_page.png)
+![Admin Page](https://github.com/boomerandzapper/jungle-rails/blob/master/screenshots/admin_page.png)
