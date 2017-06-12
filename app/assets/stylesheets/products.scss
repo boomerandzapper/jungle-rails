@@ -62,6 +62,17 @@ main section.categories-show {
         color: white;
       }
 
+      aside.rating {
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 10px;
+        background-color: grey;
+        border-top-left-radius: 4px;
+        border-bottom-right-radius: 20px;
+        color: white;
+      }
+
       &:hover {
 
         border-color: #999;

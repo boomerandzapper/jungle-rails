@@ -26,6 +26,30 @@
       </div>
     </div>
 
+    <div class="row">
+      <h1>Reviews:</h1>
+        <% @reviews.each do |review| %>
+          <%= render 'comment', description: review.description, rating: review.rating, user_name: review.user.first_name, user_id: review.user.id, review: review %>
+        <% end %>
+    </div>
   </article>
+
+<% if current_user %>
+  <h2>New Review</h2>
+
+  <%= form_for([@product, @new_review]) do |form| %>
+    <div class="field">
+      <%= form.label "Description: "%>
+      <%= form.text_field :description%>
+    </div>
+      <div class="field">
+      <%= form.label "Rating: " %>
+      <%= form.select :rating, 1..5%>
+    </div>
+    <div class="actions">
+      <%= form.submit %>
+    </div>
+  <% end %>
+<% end %>
 
 </section>

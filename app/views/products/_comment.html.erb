@@ -1,0 +1,11 @@
+<article class="comment">
+
+<div><h3><%= description %></h3></div>
+<div><h5><%= rating %> / 5</h5></div>
+<div>- <%= user_name %></div>
+<% if user_id == current_user.id %>
+
+    <%= link_to fa_icon('trash'), [review.product, review], class: 'btn btn-sm btn-danger', method: :delete, data: { confirm: "Are you sure?" } %>
+
+<% end %>
+</article>

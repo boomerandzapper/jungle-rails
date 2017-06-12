@@ -17,7 +17,14 @@
     <% end %>
   </footer>
 
- <% if product.quantity === 0 %>
+
+  <% if product.reviews.first %>
+  <aside class="rating">
+    <%= (product.reviews.map {|review| review.rating}.reduce(:+) / product.reviews.size).to_s + " / 5"%>
+  </aside>
+  <% end %>
+
+   <% if product.quantity === 0 %>
   <aside class="sold_out">
     <%= 'SOLD OUT!' %>
   </aside>
